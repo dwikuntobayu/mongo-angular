@@ -1,6 +1,13 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+# uncomment this if you want use sql database
+#require 'rails/all'
+
+# this require group for non sql database
+require "action_controller/railtie"
+require "action_mailer/railtie"
+#require "active_resource/railtie" # Comment this line for Rails 4.0+
+require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
