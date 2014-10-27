@@ -10,6 +10,8 @@ development:
       # of host:port pairs. (required)
       hosts:
         - localhost:27017
+      username: "mdwikuntobayu"
+      password: "12345678"
       options:
         # Change the default write concern. (default = { w: 1 })
         # write:
