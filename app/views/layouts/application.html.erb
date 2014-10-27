@@ -6,9 +6,27 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body style="padding-top:60px;">
+  <!--bagian navigation-->
+  <div class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <%= render 'shared/navbar' %>
+  </div>
 
-<%= yield %>
-
+  <!--Bagian Content -->
+  <div class="container clearfix">
+    <div class="row row-offcanvas row-offcanvas-left ">
+      <!--Bagian Kiri-->
+      <div class="col-xs-12 col-sm-3 side pull-left sidebar-offcanvas" id="sidebar" role="navigation">
+        <%= render 'shared/sidebar' %>
+      </div>
+      <!---Bagian Kanan-->
+      <div id="main-content" class="col-xs-12 col-sm-9 main pull-right">
+        <div class="panel-body">
+          <%= render 'layouts/flash' %>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
