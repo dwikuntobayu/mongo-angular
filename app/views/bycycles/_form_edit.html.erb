@@ -1,0 +1,60 @@
+<div>
+  <%= link_to "Back to Menu Bycycle", bycycles_path, remote: true %>
+</div>
+<div id="bycycle-form">
+<%= form_for @bycycle, url: bycycle_path, method: "PUT", remote: true, html: {class: "form-horizontal", role: "form"} do |f| %>
+
+  <div class="form-group">
+    <%= f.label :brand, "Brand", :class => "col-lg-3 control-label" %>
+    <div class="col-lg-4 brand">
+    <%= f.text_field :brand, :class => "form-control", :autofocus => true %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :category, "Category", :class => "col-lg-3 control-label" %>
+    <div class="col-lg-4 category">
+    <%= f.text_field :category, :class => "form-control" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :serial_model, "Serial Model", :class => "col-lg-3 control-label" %>
+    <div class="col-lg-4 serial_model">
+    <%= f.text_field :serial_model, :class => "form-control" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :name, "Name", :class => "col-lg-3 control-label" %>
+    <div class="col-lg-4 name">
+    <%= f.text_field :name, :class => "form-control" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :stock, "Stock", :class => "col-lg-3 control-label" %>
+    <div class="col-lg-4 stock">
+    <%= f.text_field :stock, :class => "form-control" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :status, "Status", :class => "col-lg-3 control-label" %>
+    <div class="col-lg-4 status">
+    <%= f.text_field :status, :class => "form-control" %>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+  <div>
+    <%= f.submit "Save Data", class: "btn btn-info" %>
+  </div>
+
+<% end %>
+</div>

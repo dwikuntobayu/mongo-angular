@@ -1,0 +1,31 @@
+<div>
+  <%= link_to "Back to Menu Bycycle", bycycles_path, remote: true %>
+</div>
+<table  class="table table-hover table-striped display" >
+  <tbody>
+    <tr>
+      <th class="col-lg-2">Brand</th>
+      <td class="col-lg-3"><%= @bycycle.brand %></td>
+    </tr>
+    <tr>
+      <th>Category</th>
+      <td><%= @bycycle.category %></td>
+    </tr>
+    <tr>
+      <th>Serial</th>
+      <td><%= @bycycle.serial_model %></td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td><%= @bycycle.name %></td>
+    </tr>
+    <tr>
+      <th>Stock</th>
+      <td><%= @bycycle.stock %></td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td><%= @bycycle.status %></td>
+    </tr>
+  </tbody>
+</table>

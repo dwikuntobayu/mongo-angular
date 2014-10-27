@@ -1,0 +1,30 @@
+<div id="crud">
+  <%= link_to "Create new data", new_bycycle_path, remote: true, class: "btn btn-info" %>
+</div>
+
+<table  class="table table-bordered table-hover table-striped display" >
+  <thead>
+    <tr>
+      <th>Detail</th>
+      <th>Brand</th>
+      <th>Category</th>
+      <th>Name</th>
+      <th>Stock</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @bycycles.each do |bycycle| %>
+    <tr>
+      <td>
+        <%= link_to "Show", bycycle_path(bycycle.id), remote: true %><span> | </span>
+        <%= link_to "Edit", edit_bycycle_path(bycycle.id), remote: true %><span> | </span>
+        <%= link_to "Delete", bycycle_path(bycycle.id), method: "DELETE", remote: true, data: {confirm: 'Delete this data ? '} %>
+      </td>
+      <td><%= bycycle.brand %></td>
+      <td><%= bycycle.category %></td>
+      <td><%= bycycle.name %></td>
+      <td><%= bycycle.stock %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

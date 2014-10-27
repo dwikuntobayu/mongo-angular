@@ -1,0 +1,20 @@
+<% if @bycycle.errors.present? %>
+  $("#bycycle-management").html("<%= j(render 'form_edit') %>");
+
+  $('#flash').html("<%= escape_javascript raw(flash_display) %>");
+
+  //add error validation
+  $("div.form-group p").remove();
+  <% @bycycle.errors.each do |key, error| %>
+    var key = "<%= j(key.to_s) %>";
+    var error = "<%= j(error) %>";
+    if($(".form-group div." + key).has("p").length == 0) {
+      $(".form-group div." + key).append('<p><i id="error-msg">' + error + '</i></p>');
+      $(".form-group div." + key).parent().addClass('has-error');
+    }
+  <% end %>
+<% else %>
+  $("#bycycle-management").html("<%= j(render 'list') %>");
+
+  $('#flash').html("<%= escape_javascript raw(flash_display) %>");
+<% end %>
