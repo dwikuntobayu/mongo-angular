@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   root 'bycycles#index'
   resources :bycycles
+
+  namespace :api do
+    resources :angularbycycles, only: [:index, :update]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
