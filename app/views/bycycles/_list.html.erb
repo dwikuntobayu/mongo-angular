@@ -1,8 +1,20 @@
+<style type="text/css">
+  td[contentEditable], p[ng-click] {
+    cursor: pointer;
+  }
+</style>
+
 <div id="crud">
   <%= link_to "Create new data", new_bycycle_path, remote: true, class: "btn btn-info" %>
 </div>
-
-<table  class="table table-bordered table-hover table-striped display" >
+<div ng-controller="BycyclesController">
+<p ng-click="promo('MDwikuntobayu')">{{expression_me}}</p>
+<p ng-bind="bind_me"></p>
+custom action
+<input cst-enter="promo('Enter Event')" >
+default action
+<input ui-keypress="{13:'promo("Real")'}">
+<table class="table table-bordered table-hover table-striped display" >
   <thead>
     <tr>
       <th>Detail</th>
@@ -20,7 +32,7 @@
         <%= link_to "Edit", edit_bycycle_path(bycycle.id), remote: true %><span> | </span>
         <%= link_to "Delete", bycycle_path(bycycle.id), method: "DELETE", remote: true, data: {confirm: 'Delete this data ? '} %>
       </td>
-      <td><%= bycycle.brand %></td>
+      <td contentEditable="true" ng-model="bycycle.brand" data-bycycle-id="'<%= bycycle.id %>'" ng-focus="promo('<%= bycycle.id %>')" ng-blur="promo(bycycle.brand)" ><%= bycycle.brand %></td>
       <td><%= bycycle.category %></td>
       <td><%= bycycle.name %></td>
       <td><%= bycycle.stock %></td>
@@ -28,3 +40,4 @@
     <% end %>
   </tbody>
 </table>
+</div>
