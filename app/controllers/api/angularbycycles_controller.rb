@@ -20,7 +20,7 @@ class Api::AngularbycyclesController < ApplicationController
   def update
     bycycle_brand = params[:brand]
     bycycle = Bycycle.find(params[:id])
-    if bycycle.update_attribute("bycycle_brand", bycycle_brand)
+    if bycycle.update_attribute("brand", bycycle_brand)
       render :status => 200, :json => {:status => 1, :message => "OK"}
     else
       render :status => 500, :json => {:status => 0, :message => "failed"}
