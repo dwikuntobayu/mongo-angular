@@ -8,12 +8,22 @@
   <%= link_to "Create new data", new_bycycle_path, remote: true, class: "btn btn-info" %>
 </div>
 <div ng-controller="BycyclesController">
-<p ng-click="promo('MDwikuntobayu')">{{expression_me}}</p>
+<p ng-click="promo('544e31ba6d646b545c010000')">{{expression_me}}</p>
 <p ng-bind="bind_me"></p>
+<p>
+  <span>{{bycycle_scope.bycycle}}</span>
+</p>
+<p ng-bind="bind_me_brand"></p>
 custom action
 <input cst-enter="promo('Enter Event')" >
-default action
-<input ui-keypress="{13:'promo("Real")'}">
+
+
+<ul ng-repeat="bycycle_data in list_bycycle">
+  <li ng-repeat="bycycle_obj in bycycle_data">
+    {{bycycle_obj.brand}}
+  </li>
+</ul>
+
 <table class="table table-bordered table-hover table-striped display" >
   <thead>
     <tr>
@@ -32,7 +42,7 @@ default action
         <%= link_to "Edit", edit_bycycle_path(bycycle.id), remote: true %><span> | </span>
         <%= link_to "Delete", bycycle_path(bycycle.id), method: "DELETE", remote: true, data: {confirm: 'Delete this data ? '} %>
       </td>
-      <td contentEditable="true" ng-model="bycycle.brand" data-bycycle-id="'<%= bycycle.id %>'" ng-focus="promo('<%= bycycle.id %>')" ng-blur="promo(bycycle.brand)" ><%= bycycle.brand %></td>
+      <td contentEditable="true" ng-model="bycycle.brand" data-bycycle-id="'<%= bycycle.id %>'" ng-focus="promo('<%= bycycle.id %>')" ng-blur="process_update('<%= bycycle.id %>', 'This mus not used')" ><%= bycycle.brand %></td>
       <td><%= bycycle.category %></td>
       <td><%= bycycle.name %></td>
       <td><%= bycycle.stock %></td>
