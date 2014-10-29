@@ -17,10 +17,21 @@ class Api::AngularbycyclesController < ApplicationController
     render :status => 200, :json => { :bycycles => response }
   end
 
+  def show
+    bycycle = Bycycle.find(params[:id])
+    if bycycle
+      render :status => 200, :json => {:status => 1, :message => "OK", :bycycle => bycycle}
+    else
+      render :status => 500, :json => {:status => 0, :message => "not found"}
+    end
+  end
+
   def update
     bycycle_brand = params[:brand]
     bycycle = Bycycle.find(params[:id])
-    if bycycle.update_attribute("brand", bycycle_brand)
+     if bycycle.update_attribute("brand", bycycle_brand)
+    #debugger
+    #if bycycle.update_attributes(params_bycycle)
       render :status => 200, :json => {:status => 1, :message => "OK"}
     else
       render :status => 500, :json => {:status => 0, :message => "failed"}
