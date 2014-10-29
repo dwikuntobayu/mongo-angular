@@ -14,8 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require angular/angular
+//= require angular/angular-route
+//= require angular/angular-resource
 //= require angular/ui-utils
 //= require angular/ui-utils-ieshiv
 //= require angular/controllers/bycycles
+//= require angular/controllers/services
 //= require_tree .
 //= require bootstrap.min
