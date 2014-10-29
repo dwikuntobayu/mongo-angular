@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :bycycles
 
   namespace :api do
-    resources :angularbycycles, only: [:index, :update]
+    resources :angularbycycles, only: [:index, :show, :update]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
