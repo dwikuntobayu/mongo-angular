@@ -24,6 +24,12 @@ custom action
   </li>
 </ul>
 
+<div id="1234">
+  <p get-value-element ng-model="$scope.bycycleData.hero" id="1234brand" >Hero One</p>
+  <p ng-model="$scope.bycycleData.hero" ng-click="see_content(this)" class="brand" >Hero Two</p>
+  <p ng-model="$scope.bycycleData.hero" ng-click="see_content(this)" class="brand" >Hero Three</p>
+</div>
+
 <table class="table table-bordered table-hover table-striped display" >
   <thead>
     <tr>
@@ -42,7 +48,7 @@ custom action
         <%= link_to "Edit", edit_bycycle_path(bycycle.id), remote: true %><span> | </span>
         <%= link_to "Delete", bycycle_path(bycycle.id), method: "DELETE", remote: true, data: {confirm: 'Delete this data ? '} %>
       </td>
-      <td contentEditable="true" ng-model="bycycle.brand" data-bycycle-id="'<%= bycycle.id %>'" ng-focus="promo('<%= bycycle.id %>')" ng-blur="process_update('<%= bycycle.id %>', 'This mus not used')" ><%= bycycle.brand %></td>
+      <td process-value-update id="<%= bycycle.id %>" contentEditable="true" ng-model="bycycle.brand.<%= bycycle.id %>" data-bycycle-id="'<%= bycycle.id %>'" ng-focus="promo('<%= bycycle.id %>')" ><%= bycycle.brand %></td>
       <td><%= bycycle.category %></td>
       <td><%= bycycle.name %></td>
       <td><%= bycycle.stock %></td>
