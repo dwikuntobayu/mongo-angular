@@ -16,6 +16,7 @@
 //= require angular/angular
 //= require angular/angular-route
 //= require angular/angular-resource
+//= require angular/angular-sanitize
 //= require angular/ui-utils
 //= require angular/ui-utils-ieshiv
 //= require angular/controllers/bycycles
